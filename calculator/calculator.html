@@ -1,0 +1,24 @@
+<html ng-app="calModule">
+
+<head>
+    <script src="angular.js"></script>
+    <script src = "calapp.js"></script>
+</head>
+
+<body>
+
+<div ng-controller="Calculate as cal">
+    <h1>Calculator App</h1>
+    <input type="text" ng-model="cal.num1"></input> 
+    <span ng-bind="cal.selectedOp"></span>
+    <input type="text" ng-model="cal.num2"></input> 
+    <button ng-click="cal.process()">=</button>
+    <span ng-bind="cal.output"></span>
+    <p>Choose Operation 
+        <button ng-click="cal.buttonClicked('+')">+</button> 
+        <button ng-click="cal.buttonClicked('-')">-</button> 
+        <button ng-click="cal.buttonClicked('*')">*</button> 
+        <button ng-click="cal.buttonClicked('/')">/</button>
+    </p>
+</div>
+</html>

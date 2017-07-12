@@ -1,0 +1,15 @@
+<html ng-app="clockModule">
+
+<head>
+    <script src="angular.js"></script>
+    <script src = "clockapp.js"></script>
+</head>
+
+<body>
+
+<div ng-controller="CurrentTime as time">
+    <h1>Clock App</h1>
+    <p>Current time is {{time.currentTime}}</p>
+    <button ng-click="time.updateTime()">Refresh</button>
+</div>
+</html>

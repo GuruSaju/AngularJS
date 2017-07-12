@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="style.css"/>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="angular-ui-router.js"></script>
+		
+		<script>
+			var app=angular.module("app",['ui.router']);
+
+			app.config(function($stateProvider,$urlRouterProvider){
+				$urlRouterProvider.otherwise('/page1');
+				$stateProvider.state('page1',{
+						url:"/page1",
+						templateUrl:'page1.html'
+				})
+				.state('page2',{
+						url:"/page2",
+						templateUrl:'page2.html'
+				})
+				.state('page3',{
+						url:"/page3",
+						templateUrl:'page3.html'
+				})
+			});
+
+		</script>
+		<script type="text/javascript" src="page2Controller.js"></script>
+		<script type="text/javascript" src="page3Controller.js"></script>
+	</head>
+	<body >
+		<div >
+			<div>
+				<ul>
+					<li><a ui-sref="page1">Table 1</a></li>
+					<li><a ui-sref="page2">Table 2</a></li>
+					<li><a ui-sref="page3">Table 3</a></li>
+				</ul>
+			</div>
+			<div ui-view>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+table{
+		border-collapse:collapse;
+		width:200px;
+		
+	}
+.w200{
+	width:200px;
+	
+}	
+tr,td,th{
+	border:1px solid ;
+}
+td,th{
+	padding:10px;
+}
+
+.headerRow,.trow{
+	
+	width:200px;
+	
+	
+}
+.tcolom{
+	width:78px;
+	float:left;
+	padding:10px;
+	border:1px solid;
+	
+}

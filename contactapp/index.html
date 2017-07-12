@@ -1,0 +1,59 @@
+<html ng-app="ContactModule">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+            crossorigin="anonymous">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    
+</head>
+
+<body>
+    <h1> My Contact App</h1>
+    <div class='container' ng-controller="ContactControl as con">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="list in con.contacts" ng-click="con.selectContact($index)">
+                    <span>{{list.name.first + " " + list.name.last}}</span>
+                </li>
+            </ul>
+        </div>
+    
+    <div classs="row">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img ng-src="{{con.selectedContact.picture.medium}}"></img>
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{con.selectedContact.name.first + " " + con.selectedContact.name.last}}</h4>
+                <div>
+                    <p>
+                    <h6>Location</h6>
+                    </p>
+                    <p>
+                        {{con.selectedContact.location.street + " "+ con.selectedContact.location.city+" "+con.selectedContact.location.state}}
+                    </p>
+                </div>
+                <div>
+                    <p>
+                    <h6>Phone</h6>
+                    </p>
+                    <p>
+                        {{con.selectedContact.cell}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+
+
+
+</html>
